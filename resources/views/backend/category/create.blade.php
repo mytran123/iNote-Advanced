@@ -1,7 +1,53 @@
-<form action="" method="post" enctype="multipart/form-data">
-    @csrf
-    <input type="text" name="name">
-    <input type="text" name="description">
-    <input type="file" name="file">
-    <button type="submit">Add Category</button>
-</form>
+@extends('backend.layouts.master')
+@section('title','Admin')
+@section('backend.category.create')
+    <style>
+        th{
+            text-align: center;
+            color: #28a745;
+        }
+        button{
+            margin: 5px;
+        }
+    </style>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Category Create</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <form action="" method="post" enctype="multipart/form-data">
+                    @csrf
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <tr>
+                        <th>Category</th>
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="" id="" cols="45" rows="10">{{$category->description}}</textarea></td>
+{{--                        <td><input type="text" name="description"></td>--}}
+                    </tr>
+                    <tr>
+                        <th>Imade</th>
+                        <td><input type="file" name="file"></td>
+                    </tr>
+                    <tr>
+                        <a href="{{route("categories.list")}}">Back</a>
+                        <button type="reset">Reset</button>
+                        <button type="submit">Add Category</button>
+                    </tr>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+{{--<form action="" method="post" enctype="multipart/form-data">--}}
+{{--    @csrf--}}
+{{--    <input type="text" name="name">--}}
+{{--    <input type="text" name="description">--}}
+{{--    <input type="file" name="file">--}}
+{{--    <button type="submit">Add Category</button>--}}
+{{--</form>--}}
