@@ -8,6 +8,8 @@
         }
         button{
             margin: 5px;
+            height: 100%;
+            border-radius: 5px;
         }
     </style>
     <div class="card shadow mb-4">
@@ -21,21 +23,24 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Category</th>
-                        <td><input type="text" name="name"></td>
+                        <td><input style="width: 90%" type="text" name="name"></td>
                     </tr>
                     <tr>
                         <th>Description</th>
-                        <td><textarea name="" id="" cols="45" rows="10">{{$category->description}}</textarea></td>
+                        <td><textarea style="width: 90%" type="text" name="description" id="" cols="30" rows="10"></textarea></td>
 {{--                        <td><input type="text" name="description"></td>--}}
                     </tr>
                     <tr>
-                        <th>Imade</th>
+                        <th>Image</th>
                         <td><input type="file" name="file"></td>
                     </tr>
                     <tr>
-                        <a href="{{route("categories.list")}}">Back</a>
-                        <button type="reset">Reset</button>
-                        <button type="submit">Add Category</button>
+                        <a href="{{route('categories.list')}}"><button style="background-color: red" type="button" class="text-white">Back</button></a>
+                        <button class="text-dark" style="background-color: yellow" onclick="confirm('Are you sure ???')" type="reset">Reset</button>
+                        <button class="text-white" style="background-color: mediumseagreen" type="submit">Add Category</button>
+{{--                        <a href="{{route("categories.list")}}">Back</a>--}}
+{{--                        <button type="reset">Reset</button>--}}
+{{--                        <button type="submit">Add Category</button>--}}
                     </tr>
                 </table>
                 </form>

@@ -7,7 +7,9 @@
             color: #28a745;
         }
         button{
-            margin: 5px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #28a745;
         }
     </style>
     <div class="card shadow mb-4">
@@ -43,9 +45,9 @@
                             <td>{{$category["name"]}}</td>
                             <td>{{$category["description"]}}</td>
                             <td><img style="width: 300px; height: 150px" src="img/{{$category->image}}" alt=""></td>
-                            <td><a href="{{route('categories.detail',$category->id)}}">Detail</a></td>
-                            <td><a href="{{route('categories.update',$category->id)}}">Update</a></td>
-                            <td><a onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}">Delete</a></td>
+                            <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>
+                            <td><a class="btn btn-success" href="{{route('categories.update',$category->id)}}">Update</a></td>
+                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>

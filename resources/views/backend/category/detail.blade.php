@@ -7,7 +7,10 @@
             color: #28a745;
         }
         button{
-            margin: 5px;
+            margin: 1px;
+            height: 100%;
+            width: 100px;
+            border-radius: 5px;
         }
     </style>
     <div class="card shadow mb-4">
@@ -33,7 +36,8 @@
                     </tfoot>
                     <tbody>
                     <tr>
-                        <td><img style="width: 100px; height: 100px" src="img/{{$category->image}}" alt=""></td>
+                        <a href="{{route('categories.list')}}"><button style="background-color: #BDBDBD" type="button" class="text-dark">Back</button></a>
+                        <td><img style="width: 300px; height: 150px" src="{{asset('img/'.$category->image)}}" alt=""></td>
                         <td>{{$category["name"]}}</td>
                         <td><textarea name="" id="" cols="45" rows="10">{{$category->description}}</textarea></td>
 {{--                        <td>{{$category["description"]}}</td>--}}

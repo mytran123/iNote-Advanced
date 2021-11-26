@@ -8,6 +8,8 @@
         }
         button{
             margin: 5px;
+            height: 100%;
+            border-radius: 5px;
         }
     </style>
     <div class="card shadow mb-4">
@@ -21,19 +23,22 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Category</th>
-                        <td><input type="text" name="name" value="{{$category->name}}"></td>
+                        <td><input style="width: 90%" type="text" name="name" value="{{$category->name}}"></td>
                     </tr>
                     <tr>
                         <th>Description</th>
-                        <td><textarea name="" id="" cols="45" rows="10">{{$category->description}}</textarea></td>
+                        <td><textarea style="width: 90%" name="" id="" cols="45" rows="10">{{$category->description}}</textarea></td>
                     </tr>
                     <tr>
                         <th>Image</th>
                         <td><input type="file" name="file"></td>
                     </tr>
                     <tr>
-                        <button type="reset" onclick="return confirm('Are you sure !!')">Reset</button>
-                        <button type="submit">Save</button>
+                        <a href="{{route('categories.list')}}"><button style="background-color: red" type="button" class="text-white">Back</button></a>
+                        <button class="text-dark" style="background-color: yellow" onclick="confirm('Are you sure ???')" type="reset">Reset</button>
+                        <button class="text-white" style="background-color: mediumseagreen" type="submit">Save Category</button>
+{{--                        <button type="reset" onclick="return confirm('Are you sure !!')">Reset</button>--}}
+{{--                        <button type="submit">Save</button>--}}
                     </tr>
                 </table>
                 </form>
