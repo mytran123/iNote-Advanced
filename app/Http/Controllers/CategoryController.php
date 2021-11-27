@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCategoryRequest;
 use App\Repository\CategoryRepository;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,12 @@ class CategoryController extends Controller
         return view("backend.category.create");
     }
 
-    public function store(Request $request)
+    public function store(CreateCategoryRequest $request)
     {
+//        $validated = $request->validate([
+//            "name" => "required | max:20 | min:6",
+//            "description" => "required"
+//        ]);
         $this->categoryRepository->create($request);
         return redirect()->route('categories.list');
     }

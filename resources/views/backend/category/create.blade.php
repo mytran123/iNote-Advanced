@@ -23,12 +23,23 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Category</th>
-                        <td><input style="width: 90%" type="text" name="name"></td>
+                        <td>
+                            <input style="width: 90%" type="text" name="name" value="{{old('name')}}">
+                            @error('name')
+                                <p class="text text-danger">{{$message}}</p>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <th>Description</th>
-                        <td><textarea style="width: 90%" type="text" name="description" id="" cols="30" rows="10"></textarea></td>
+                        <td>
+                            <textarea style="width: 90%" type="text" name="description" id="" cols="30" rows="10"></textarea>
+                            @error('description')
+                            <p class="text text-danger">{{$message}}</p>
+                            @enderror
+                        </td>
 {{--                        <td><input type="text" name="description"></td>--}}
+
                     </tr>
                     <tr>
                         <th>Image</th>
