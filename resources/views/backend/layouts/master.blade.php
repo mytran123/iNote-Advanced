@@ -66,8 +66,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">List</a>
-                    <a class="collapse-item" href="cards.html">Add New</a>
+                    <a class="collapse-item" href="{{route("categories.list")}}">List</a>
+                    <a class="collapse-item" href="{{route("categories.create")}}">Add New</a>
                 </div>
             </div>
         </li>
@@ -104,14 +104,14 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
+                <span>Private</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                    <a class="collapse-item" href="{{route("users.list")}}">User List</a>
+                    <a class="collapse-item" href="{{route("users.create")}}">Create User</a>
+{{--                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>--}}
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="404.html">404 Page</a>
@@ -359,6 +359,10 @@
                 @yield('backend.category.detail')
                 @yield('backend.category.create')
                 @yield('backend.category.update')
+
+                @yield('backend.user.list')
+                @yield('backend.user.create')
+                @yield('backend.user.detail')
             </div>
             <!-- /.container-fluid -->
 
