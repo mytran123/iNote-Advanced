@@ -40,12 +40,12 @@
                         </tr>
                         <tr>
                             <th>Birthday</th>
-                            <td><input style="width: 90%" type="text" name="birthday"></td>
+                            <td><input style="width: 90%" type="date" name="birthday"></td>
                         </tr>
                         <tr>
                             <th>Sex</th>
                             <td>
-                                <select name="sex" id="sex" style="width: 100%">
+                                <select name="sex" id="sex" style="width: 90%">
                                     <option value="Other">Male</option>
                                     <option value="Other">Female</option>
                                     <option value="Other">Other</option>
@@ -60,9 +60,6 @@
                             <a href="{{route('users.list')}}"><button style="background-color: red" type="button" class="text-white">Back</button></a>
                             <button class="text-dark" style="background-color: yellow" onclick="confirm('Are you sure ???')" type="reset">Reset</button>
                             <button class="text-white" style="background-color: mediumseagreen" type="submit">Add User</button>
-                            {{--                        <a href="{{route("categories.list")}}">Back</a>--}}
-                            {{--                        <button type="reset">Reset</button>--}}
-                            {{--                        <button type="submit">Add Category</button>--}}
                         </tr>
                     </table>
                 </form>

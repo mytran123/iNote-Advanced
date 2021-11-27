@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Http\Controllers\NoteController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 
 class UserRepository
@@ -32,19 +32,19 @@ class UserRepository
 
     public function getById($id)
     {
-        $note = Note::findOrFail($id);
-        return $note;
+        $user = User::findOrFail($id);
+        return $user;
     }
 
     public function update($request, $id)
     {
-        Note::query()->findOrFail($id);
+        User::query()->findOrFail($id);
         $data = $request->only('name','phone','email','password','birthday','sex','image');
         $image = $request->file('file');
         $data['image'] = time() . '.' . $image->getClientOriginalExtension();
         $path = public_path('img');
         $image->move($path, $data['image']);
-        return USer::query()->where('id','=',$id)->update($data);
+        return User::query()->where('id','=',$id)->update($data);
     }
 
     public function delete($id)

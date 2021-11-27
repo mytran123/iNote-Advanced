@@ -50,9 +50,9 @@
                             <td>{{$user["phone"]}}</td>
                             <td>{{$user["email"]}}</td>
                             <td><img style="width: 300px; height: 150px" src="{{asset('img/'.$user->image)}}" alt=""></td>
-{{--                            <td><a class="btn btn-warning" href="{{route('users.detail',$user->id)}}">Detail</a></td>--}}
-{{--                            <td><a class="btn btn-success" href="{{route('users.update',$user->id)}}">Update</a></td>--}}
-{{--                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('users.delete',$user->id)}}"><i class="fas fa-trash-alt"></i></a></td>--}}
+                            <td><a class="btn btn-warning" href="{{route('users.detail',$user->id)}}">Detail</a></td>
+                            <td><a class="btn btn-success" href="{{route('users.update',$user->id)}}">Update</a></td>
+                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('users.delete',$user->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>
