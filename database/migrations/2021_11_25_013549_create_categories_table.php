@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string("name",200);
             $table->text("description")->nullable();
             $table->string("image",200)->nullable();
-            $table->bigInteger("user_id")->unsigned();
+            $table->bigInteger("user_id")->unsigned()->default(0);
             $table->timestamps();
         });
     }

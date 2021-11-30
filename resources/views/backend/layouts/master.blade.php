@@ -364,6 +364,11 @@
                 @yield('backend.user.create')
                 @yield('backend.user.detail')
                 @yield('backend.user.update')
+
+                @yield('backend.note.list')
+                @yield('backend.note.create')
+                @yield('backend.note.detail')
+                @yield('backend.note.update')
             </div>
             <!-- /.container-fluid -->
 

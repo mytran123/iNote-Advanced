@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\note;
 use Illuminate\Database\Seeder;
 
 class NoteSeeder extends Seeder
@@ -14,5 +15,6 @@ class NoteSeeder extends Seeder
     public function run()
     {
         //
+        Note::factory()->count(20)->create();
     }
 }
