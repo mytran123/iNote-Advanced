@@ -26,8 +26,9 @@ class CategoryRepository
 
     public function store($request)
     {
-        $data = $request->only('name','request');
-        Category::query()->create();
+//        dd($request);
+        $data = $request->only('name','description','image');
+        Category::query()->create($data);
     }
 
     public function getByUserId($userId)

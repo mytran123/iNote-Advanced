@@ -1,3 +1,4 @@
+{{--{{dd($categories)}}//--}}
 @extends('backend.layouts.master')
 @section('title','Admin')
 @section('backend.category.list')
@@ -42,8 +43,8 @@
                     @foreach($categories as $key => $category)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$category["name"]}}</td>
-                            <td>{{$category["description"]}}</td>
+                            <td>{{$category->name}}</td>
+                            <td>{{$category->description}}</td>
                             <td><img style="width: 300px; height: 150px" src="img/{{$category->image}}" alt=""></td>
                             <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>
                             <td><a class="btn btn-success" href="{{route('categories.update',$category->id)}}">Update</a></td>
