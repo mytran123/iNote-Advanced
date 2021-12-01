@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UserController;
@@ -16,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/categories',[CategoryController::class,"index"]);
+Route::get('/',function () {
+    return redirect()->route('admin.showFormLogin');
+});
 
 Route::prefix('categories')->group(function() {
     Route::get('/',[CategoryController::class,"index"])->name("categories.list");
@@ -47,3 +50,7 @@ Route::prefix('users')->group(function () {
     Route::post('/{id}/update',[UserController::class,"update"])->name("users.update");
     Route::get('/{id}/delete',[UserController::class,"destroy"])->name("users.delete");
 });
+
+Route::get('/login',[AuthController::class,"showFormLogin"])->name("admin.showFormLogin");
+Route::post('/login',[AuthController::class,"login"])->name("admin.login");
+Route::get('/logout',[AuthController::class,"logout"])->name("admin.logout");

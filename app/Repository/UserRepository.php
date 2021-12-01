@@ -30,6 +30,7 @@ class UserRepository
         User::query()->create($data);
     }
 
+
     public function getById($id)
     {
         $user = User::findOrFail($id);

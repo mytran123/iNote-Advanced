@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Category;
+use App\Models\note;
 
 class CategoryRepository
 {
@@ -27,6 +28,12 @@ class CategoryRepository
     {
         $data = $request->only('name','request');
         Category::query()->create();
+    }
+
+    public function getByUserId($userId)
+    {
+        $categories = Category::where('user_id',$userId);
+        return $categories;
     }
 
     public function getById($id)

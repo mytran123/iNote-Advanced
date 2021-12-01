@@ -29,6 +29,8 @@ class NoteRepository
         Note::query()->create();
     }
 
+
+
     public function getById($id)
     {
         $note = Note::findOrFail($id);

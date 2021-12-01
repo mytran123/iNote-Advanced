@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateCategoryRequest;
 use App\Repository\CategoryRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -18,7 +19,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $this->categoryRepository->getAll();
+        $userId = Auth::user()->id;
+        $categories = $this->categoryRepository->getByUserId($userId);
         return view("backend.category.list", compact("categories"));
     }
 
