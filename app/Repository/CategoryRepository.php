@@ -32,7 +32,7 @@ class CategoryRepository
 
     public function getByUserId($userId)
     {
-        $categories = Category::where('user_id',$userId);
+        $categories = Category::where('user_id',$userId)->get();
         return $categories;
     }
 
