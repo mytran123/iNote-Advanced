@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\RoleRepository;
 use App\Repository\UserRepository;
 use Illuminate\Http\Request;
 
@@ -9,25 +10,31 @@ class UserController extends Controller
 {
     //
     protected $userRepository;
+    protected $roleRepository;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, RoleRepository $roleRepository)
     {
         $this->userRepository = $userRepository;
+        $this->roleRepository = $roleRepository;
     }
 
     public function index()
     {
         $users = $this->userRepository->getAll();
+
         return view("backend.user.list", compact("users"));
     }
 
     public function create()
     {
-        return view("backend.user.create");
+        $roles = $this->roleRepository->getAll();
+        return view("backend.user.create", compact("roles"));
     }
 
     public function store(Request $request)
     {
+//        $role = $request->input('role-id');
+//        dd($request);
         $this->userRepository->create($request);
         return redirect()->route("users.list");
     }

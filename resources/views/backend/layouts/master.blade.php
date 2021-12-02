@@ -348,20 +348,21 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                @yield('backend.category.list')
-                @yield('backend.category.detail')
-                @yield('backend.category.create')
-                @yield('backend.category.update')
+                @yield('content')
+{{--                @yield('backend.category.list')--}}
+{{--                @yield('backend.category.detail')--}}
+{{--                @yield('backend.category.create')--}}
+{{--                @yield('backend.category.update')--}}
 
-                @yield('backend.user.list')
-                @yield('backend.user.create')
-                @yield('backend.user.detail')
-                @yield('backend.user.update')
+{{--                @yield('backend.user.list')--}}
+{{--                @yield('backend.user.create')--}}
+{{--                @yield('backend.user.detail')--}}
+{{--                @yield('backend.user.update')--}}
 
-                @yield('backend.note.list')
-                @yield('backend.note.create')
-                @yield('backend.note.detail')
-                @yield('backend.note.update')
+{{--                @yield('backend.note.list')--}}
+{{--                @yield('backend.note.create')--}}
+{{--                @yield('backend.note.detail')--}}
+{{--                @yield('backend.note.update')--}}
             </div>
             <!-- /.container-fluid -->
 
