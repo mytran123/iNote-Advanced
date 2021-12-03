@@ -49,6 +49,7 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$user->name}}</td>
+{{--                            <td>{{$user->sex}}</td>--}}
                             <td>{{$user->phone}}</td>
                             <td>
                                 @if(count($user->roles) > 0)

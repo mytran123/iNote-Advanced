@@ -81,7 +81,7 @@
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                  data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
+                <div class="bg-white py-2 collapse-inner rounded"e>
                     <h6 class="collapse-header">Custom Utilities:</h6>
                     <a class="collapse-item" href="{{route('notes.list')}}">List</a>
                     <a class="collapse-item" href="{{route('notes.create')}}">Add New</a>

@@ -14,27 +14,33 @@ class UserRepository
         return $users;
     }
 
-    public function create($request)
-    {
-        $data = $request->only('name','phone','email','password','role-id');
+//    public function create($request)
+//    {
+//        $data = $request->only('name','phone','email','password','role-id');
 //        $image = $request->file('file');
 //        $data['image'] = time() . '.' . $image->getClientOriginalExtension();
 //        $path = public_path('img');
 //        $image->move($path, $data['image']);
-        $user = User::query()->create($data);
-        $user->roles()->attach($data['role-id']);
-        return $user;
-
-//        $user = new User();
-//        $user->fill($request->all());
-//        $user->save();
-//        $user->roles()->sync($request->role_id);
-    }
+//        $user = User::query()->create($data);
+//        $user->roles()->attach($data['role-id']);
+//        return $user;
+//
+////        $user = new User();
+////        $user->fill($request->all());
+////        $user->save();
+////        $user->roles()->sync($request->role_id);
+//    }
 
     public function store($request)
     {
         $data = $request->only('name','phone','email','password','image','birthday','sex');
-        User::query()->create($data);
+        $image = $request->file('file');
+        $data['image'] = time() . '.' . $image->getClientOriginalExtension();
+        $path = public_path('img');
+        $image->move($path, $data['image']);
+        $user = User::query()->create($data);
+        $user->roles()->attach($data['role-id']);
+        return $user;
     }
 
     public function getById($id)

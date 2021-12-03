@@ -27,8 +27,7 @@
                         </tr>
                         <tr>
                             <th>Phone</th>
-                            <td><textarea style="width: 90%" type="text" name="description" id="" cols="30" rows="10"></textarea></td>
-                            {{--                        <td><input type="text" name="description"></td>--}}
+                            <td><input style="width: 90%" type="text" name="phone"></td>
                         </tr>
                         <tr>
                             <th>Email</th>
@@ -38,21 +37,21 @@
                             <th>Password</th>
                             <td><input style="width: 90%" type="text" name="password"></td>
                         </tr>
-                        <tr>
-                            <th>Birthday</th>
-                            <td><input style="width: 90%" type="text" name="birthday"></td>
-                        </tr>
-                        <tr>
-                            <th>Sex</th>
-                            <td>
-                                <select name="sex" id="sex" style="width: 100%">
-                                    <option value="Other">Male</option>
-                                    <option value="Other">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
+{{--                        <tr>--}}
+{{--                            <th>Birthday</th>--}}
+{{--                            <td><input style="width: 90%" type="text" name="birthday"></td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <th>Sex</th>--}}
+{{--                            <td>--}}
+{{--                                <select name="sex" id="sex" style="width: 100px">--}}
+{{--                                    <option value="Male">Male</option>--}}
+{{--                                    <option value="Female">Female</option>--}}
+{{--                                    <option value="Other">Other</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
                             <th>Role</th>
                             <td>
                                 @foreach($roles as $role)

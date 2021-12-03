@@ -41,18 +41,24 @@ Route::middleware('auth')->group(function () {
         Route::post('/{id}/update',[UserController::class,"update"])->name("users.update");
         Route::get('/{id}/delete',[UserController::class,"destroy"])->name("users.delete");
     });
-});
 
-Route::prefix('notes')->group(function () {
-    Route::get('/',[NoteController::class,"index"])->name("notes.list");
-    Route::get('/create',[NoteController::class,"create"])->name("notes.create");
-    Route::post('/create',[NoteController::class,"store"])->name("notes.store");
-    Route::get('/{id}/detail',[NoteController::class, "show"])->name("notes.detail");
-    Route::get('/{id}/update',[NoteController::class, "edit"])->name("notes.edit");
-    Route::post('/{id}/update',[NoteController::class, "update"])->name("notes.update");
-    Route::get('/{id}/delete',[NoteController::class,"destroy"])->name("notes.delete");
+    Route::prefix('notes')->group(function () {
+        Route::get('/',[NoteController::class,"index"])->name("notes.list");
+        Route::get('/create',[NoteController::class,"create"])->name("notes.create");
+        Route::post('/create',[NoteController::class,"store"])->name("notes.store");
+        Route::get('/{id}/detail',[NoteController::class, "show"])->name("notes.detail");
+        Route::get('/{id}/update',[NoteController::class, "edit"])->name("notes.edit");
+        Route::post('/{id}/update',[NoteController::class, "update"])->name("notes.update");
+        Route::get('/{id}/delete',[NoteController::class,"destroy"])->name("notes.delete");
+    });
+
+
+
 });
 
 Route::get('/login',[AuthController::class,"showFormLogin"])->name("admin.showFormLogin");
 Route::post('/login',[AuthController::class,"login"])->name("admin.login");
 Route::get('/logout',[AuthController::class,"logout"])->name("admin.logout");
+Route::get('/register',[AuthController::class,"create"])->name("admin.create");
+Route::post('/register',[AuthController::class,"store"])->name("admin.register");
+

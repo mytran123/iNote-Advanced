@@ -46,8 +46,8 @@
                             <th>Sex</th>
                             <td>
                                 <select name="sex" id="sex" style="width: 90%">
-                                    <option value="Other">Male</option>
-                                    <option value="Other">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </td>

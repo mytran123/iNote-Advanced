@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     //
+    protected $roleRepository;
+    protected $userRepository;
+
     public function showFormLogin()
     {
         return view('backend.auth.login');
@@ -29,5 +32,18 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
         return redirect()->route('admin.login');
+    }
+
+    public function create()
+    {
+        return view("backend.auth.register");
+    }
+
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    {
+//        $role = $request->input('role-id');
+//        dd($request);
+        $this->userRepository->store($request);
+        return redirect()->route("backend.auth.login");
     }
 }
