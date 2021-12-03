@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserRepository
 {
@@ -36,7 +37,6 @@ class UserRepository
         User::query()->create($data);
     }
 
-
     public function getById($id)
     {
         $user = User::findOrFail($id);
@@ -58,5 +58,11 @@ class UserRepository
     {
         $user = User::query()->findOrFail($id);
         $user->delete();
+    }
+
+    function getRoleOfUser($userId)
+    {
+        $roles = DB::table('role_user')->where('user_id',$userId)->get();
+        return $roles;
     }
 }

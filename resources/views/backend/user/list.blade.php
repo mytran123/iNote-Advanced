@@ -27,6 +27,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Phone</th>
+                        <th>Role</th>
                         <th>Email</th>
                         <th>Image</th>
                         <th colspan="3">Action</th>
@@ -37,6 +38,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Phone</th>
+                        <th>Role</th>
                         <th>Email</th>
                         <th>Image</th>
                         <th colspan="3">Action</th>
@@ -48,7 +50,6 @@
                             <td>{{$key+1}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->phone}}</td>
-                            <td>{{$user->email}}</td>
                             <td>
                                 @if(count($user->roles) > 0)
                                     @foreach($user->roles as $role)
@@ -58,10 +59,11 @@
                                     <p>Chưa được phân quyền</p>
                                 @endif
                             </td>
-{{--                            <td><img style="width: 300px; height: 150px" src="{{asset('img/'.$user->image)}}" alt=""></td>--}}
-{{--                            <td><a class="btn btn-warning" href="{{route('users.detail',$user->id)}}">Detail</a></td>--}}
-{{--                            <td><a class="btn btn-success" href="{{route('users.update',$user->id)}}">Update</a></td>--}}
-{{--                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('users.delete',$user->id)}}"><i class="fas fa-trash-alt"></i></a></td>--}}
+                            <td>{{$user->email}}</td>
+                            <td><img style="width: 300px; height: 150px" src="{{asset('img/'.$user->image)}}" alt=""></td>
+                            <td><a class="btn btn-warning" href="{{route('users.detail',$user->id)}}">Detail</a></td>
+                            <td><a class="btn btn-success" href="{{route('users.update',$user->id)}}">Update</a></td>
+                            <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('users.delete',$user->id)}}"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>

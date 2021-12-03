@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title','Note')
-@section('backend.note.list')
+@section('content')
     <style>
         th{
             text-align: center;

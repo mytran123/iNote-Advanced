@@ -13,7 +13,12 @@ class CategoryRepository
         return $categories;
     }
 
-    public function create($request)
+//    public function create($request)
+//    {
+//
+//    }
+
+    public function store($request)
     {
         $data = $request->only('name','description','image');
         $image = $request->file('file');
@@ -22,13 +27,6 @@ class CategoryRepository
         $image->move($path, $data['image']);
         $category = Category::query()->create($data);
         return $category;
-    }
-
-    public function store($request)
-    {
-//        dd($request);
-        $data = $request->only('name','description','image');
-        Category::query()->create($data);
     }
 
     public function getByUserId($userId)

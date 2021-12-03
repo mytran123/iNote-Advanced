@@ -29,13 +29,13 @@ class CategoryController extends Controller
         return view("backend.category.create");
     }
 
-    public function store(CreateCategoryRequest $request)
+    public function store(CreateCategoryRequest $request): \Illuminate\Http\RedirectResponse
     {
 //        $validated = $request->validate([
 //            "name" => "required | max:20 | min:6",
 //            "description" => "required"
 //        ]);
-        $this->categoryRepository->create($request);
+        $this->categoryRepository->store($request);
         return redirect()->route('categories.list');
     }
 

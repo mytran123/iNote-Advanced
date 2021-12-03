@@ -1,7 +1,7 @@
 {{--{{dd($categories)}}//--}}
 @extends('backend.layouts.master')
 @section('title','Admin')
-@section('backend.category.list')
+@section('content')
     <style>
         th{
             text-align: center;

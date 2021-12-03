@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title','Admin')
-@section('backend.category.update')
+@section('content')
     <style>
         th{
             text-align: center;

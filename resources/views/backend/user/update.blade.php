@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title','Admin')
-@section('backend.user.update')
+@section('content')
     <style>
         th{
             text-align: center;
@@ -50,6 +50,14 @@
                                     <option value="Other">Female</option>
                                     <option value="Other">Other</option>
                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Role</th>
+                            <td>
+                                @foreach($roles as $role)
+                                    <p><input type="checkbox" name="role-id[{{$role->id}}]" value="{{$role->id}}">{{$role->name}}</p>
+                                @endforeach
                             </td>
                         </tr>
                         <tr>

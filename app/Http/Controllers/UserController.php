@@ -21,7 +21,6 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userRepository->getAll();
-
         return view("backend.user.list", compact("users"));
     }
 
@@ -48,7 +47,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = $this->userRepository->getById($id);
-        return view("backend.user.update", compact("user"));
+        $roles = $this->roleRepository->getAll();
+        $roleOfUser = $this->userRepository->getRoleOfUser($id);
+        return view("backend.user.update", compact("user",'roles','roleOfUser'));
     }
 
     public function update(Request $request, $id)
